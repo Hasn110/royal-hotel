@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="رويال فاميلي ٢٠٢٦ — حجز وإدارة إقامة فاخرة." />
+  <title>رويال فاميلي ٢٠٢٦ هوتيل | الحجز ولوحة التحكم</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Tajawal:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- Top announcement bar -->
+  <div class="announce-bar">
+    <div class="announce-bar__inner">
+      <span class="announce-bar__item">✦ خدمة الكونسيرج متاحة على مدار الساعة</span>
+      <span class="announce-bar__divider">|</span>
+      <span class="announce-bar__item">خصم ١٥٪ على الحجز المبكر — لفترة محدودة</span>
+      <span class="announce-bar__divider">|</span>
+      <span class="announce-bar__item">✦ إفطار مجاني لعدد ٢ شخص</span>
+    </div>
+  </div>
+
+  <!-- Entry loader -->
+  <div id="app-loader" class="app-loader" aria-busy="true" aria-live="polite">
+    <div class="app-loader__ring"></div>
+    <p class="app-loader__label">Royal Family 2026</p>
+  </div>
+
+  <!-- Primary navigation — SPA section switches (no full page reload) -->
+  <header class="app-header">
+    <div class="app-header__inner">
+      <button type="button" class="brand" data-nav="home" aria-label="" data-i18n-aria="brand.aria">
+        <div class="brand__emblem">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 2L21.5 13H33L23.5 19.5L27 30.5L18 24L9 30.5L12.5 19.5L3 13H14.5L18 2Z" fill="none" stroke="#D4AF37" stroke-width="1.2"/>
+            <circle cx="18" cy="18" r="6" fill="none" stroke="#D4AF37" stroke-width="0.8" opacity="0.5"/>
+          </svg>
+        </div>
+        <span class="brand__text">
+          <span class="brand__line">Royal Family</span>
+          <span class="brand__sub">◆ GRAND HOTEL ◆</span>
+          <span class="brand__year">EST. 2026</span>
+        </span>
+      </button>
+
+      <div class="header-toolbar">
+        <div id="header-session" class="header-session" aria-live="polite">
+          <span id="header-session-text" class="header-session__text"></span>
+        </div>
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="true">
+          <span class="theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true">☾</span>
+          <span class="theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true">☀</span>
+        </button>
+        <div class="lang-switch" role="group" aria-label="" data-i18n-aria="lang.groupAria">
+          <button type="button" class="lang-switch__btn lang-switch__btn--active" id="lang-ar" data-set-lang="ar" title="العربية">عربي</button>
+          <button type="button" class="lang-switch__btn" id="lang-en" data-set-lang="en" title="English">EN</button>
+        </div>
+        <button type="button" class="btn btn--header-auth" id="header-auth-btn"></button>
+      </div>
+
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="" data-i18n-aria="nav.menuOpen">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="primary-nav" id="primary-nav" aria-label="" data-i18n-aria="nav.navAria">
+        <button type="button" class="nav-link nav-link--active" data-nav="home" data-i18n="nav.home">الرئيسية</button>
+        <button type="button" class="nav-link" data-nav="rooms" data-i18n="nav.rooms">الغرف والحجز</button>
+        <button type="button" class="nav-link" data-nav="reviews" data-i18n="nav.reviews">آراء عملائنا</button>
+        <button type="button" class="nav-link" data-nav="about" data-i18n="nav.about">من نحن</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Single-page main: one visible section at a time -->
+  <main class="spa-main" id="spa-main" tabindex="-1">
+    <!-- HERO — high-impact branding -->
+    <section id="home" class="spa-section spa-section--active" data-section="home">
+      <div class="hero rf-hero">
+        <div class="rf-hero__media" aria-hidden="true"></div>
+        <div class="rf-hero__veil"></div>
+
+        <!-- Decorative side lines -->
+        <div class="rf-hero__deco rf-hero__deco--left" aria-hidden="true">
+          <span></span><span class="rf-hero__deco-roman">I</span><span></span>
+        </div>
+        <div class="rf-hero__deco rf-hero__deco--right" aria-hidden="true">
+          <span></span><span class="rf-hero__deco-roman">V</span><span></span>
+        </div>
+
+        <div class="rf-hero__content">
+          <p class="rf-hero__award reveal-item">⭐⭐⭐⭐⭐ · Forbes Five Star · World's Best Hotels 2026</p>
+          <p class="rf-hero__eyebrow reveal-item" data-i18n="hero.eyebrow">ضيافة فاخرة · هوية ذهبية وسوداء</p>
+          <div class="rf-hero__rule reveal-item" aria-hidden="true">
+            <span class="rf-hero__rule-gem">◆</span>
+          </div>
+          <h1 class="rf-hero__title reveal-item" style="--stagger:1">
+            ROYAL FAMILY<br /><span class="rf-hero__year">2026</span> HOTEL
+          </h1>
+          <div class="rf-hero__rule reveal-item" aria-hidden="true">
+            <span class="rf-hero__rule-gem">◆</span>
+          </div>
+          <p class="rf-hero__tagline reveal-item" style="--stagger:2" data-i18n="hero.tagline">
+            مركز واحد لحجز غرفتك، متابعة نقاط الولاء، وتقدير مدة إقامتك — بسرعة وبخصوصية كاملة على جهازك.
+          </p>
+          <div class="rf-hero__actions reveal-item" style="--stagger:3">
+            <button type="button" class="btn btn--gold btn--pulse" data-nav="rooms" id="hero-book-cta" data-i18n="hero.ctaBook">
+              ✦ &nbsp;احجز إقامتك الآن
+            </button>
+            <button type="button" class="btn btn--outline" data-nav="dashboard" data-i18n="hero.ctaDash">لوحة التحكم</button>
+          </div>
+          <div class="rf-hero__scroll reveal-item" style="--stagger:4" aria-hidden="true">
+            <span class="rf-hero__scroll-line"></span>
+            <span class="rf-hero__scroll-label">SCROLL</span>
+          </div>
+        </div>
+
+        <!-- Trust strip at bottom of hero -->
+        <div class="rf-hero__trust">
+          <div class="rf-hero__trust-inner">
+            <div class="rf-hero__trust-item">
+              <span class="rf-hero__trust-icon">🏆</span>
+              <span>أفضل فندق ٢٠٢٦</span>
+            </div>
+            <div class="rf-hero__trust-sep" aria-hidden="true"></div>
+            <div class="rf-hero__trust-item">
+              <span class="rf-hero__trust-icon">🛎️</span>
+              <span>خدمة ٢٤/٧</span>
+            </div>
+            <div class="rf-hero__trust-sep" aria-hidden="true"></div>
+            <div class="rf-hero__trust-item">
+              <span class="rf-hero__trust-icon">✈️</span>
+              <span>استقبال من المطار</span>
+            </div>
+            <div class="rf-hero__trust-sep" aria-hidden="true"></div>
+            <div class="rf-hero__trust-item">
+              <span class="rf-hero__trust-icon">🍽️</span>
+              <span>٣ مطاعم فاخرة</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="home-body">
+        <!-- Luxury section divider -->
+        <div class="luxury-divider">
+          <span class="luxury-divider__line"></span>
+          <span class="luxury-divider__icon">✦</span>
+          <span class="luxury-divider__text">THE ROYAL EXPERIENCE</span>
+          <span class="luxury-divider__icon">✦</span>
+          <span class="luxury-divider__line"></span>
+        </div>
+        <!-- شرح للمستخدم: ماذا يفعل الموقع -->
+        <div class="home-intro panel-inner reveal-item">
+          <h2 class="home-intro__title" data-i18n="home.intro.title">مرحبًا بك في بوابة رويال فاميلي</h2>
+          <div class="home-intro__cols">
+            <p data-i18n="home.intro.p1">
+              من هذه الصفحة يمكنك استعراض الغرف المتاحة مع صورها الحقيقية، معرفة رقم كل غرفة وموقعها داخل الفندق (الطابق والجناح)، ثم الانتقال لصفحة الحجز لإتمام الطلب.
+            </p>
+            <p data-i18n="home.intro.p2">
+              مخطط الإقامة يساعدك على حساب عدد الليالي والتكلفة التقديرية، كما يحدّث حلقة التقدم بناءً على مدة الإقامة. لوحة التحكم تعرض عدد الحجوزات، نقاط الولاء، وإجمالي الإنفاق محليًا على جهازك.
+            </p>
+            <p class="home-intro__note" data-i18n="home.intro.note">
+              لإتمام أي حجز يجب تسجيل الدخول أدناه (تجربة محلية — تُحفظ بياناتك على هذا المتصفح فقط وليست خادمًا حقيقيًا).
+            </p>
+          </div>
+        </div>
+
+        <!-- تسجيل الدخول -->
+        <div id="home-login-anchor" class="home-auth reveal-item" style="--stagger:1">
+          <div id="home-auth-guest" class="home-auth__card">
+            <h3 class="home-auth__heading" data-i18n="home.login.title">تسجيل الدخول للمتابعة</h3>
+            <p class="home-auth__lead" data-i18n="home.login.lead">أدخل بريدك وكلمة مرور (للتجربة: ٤ أحرف على الأقل). يمكنك إضافة اسم للظهور في أعلى الصفحة.</p>
+            <form id="login-form" class="login-form" autocomplete="on">
+              <label class="field field--full">
+                <span data-i18n="home.login.email">البريد الإلكتروني</span>
+                <input type="email" id="login-email" name="email" required placeholder="you@example.com" dir="ltr" />
+              </label>
+              <label class="field field--full">
+                <span data-i18n="home.login.pass">كلمة المرور</span>
+                <input type="password" id="login-pass" name="password" required minlength="4" placeholder="••••••" dir="ltr" />
+              </label>
+              <label class="field field--full">
+                <span data-i18n="home.login.nameOpt">الاسم الظاهر (اختياري)</span>
+                <input type="text" id="login-name" name="displayName" placeholder="مثال: أحمد" />
+              </label>
+              <button type="submit" class="btn btn--gold" data-i18n="home.login.submit">دخول</button>
+            </form>
+          </div>
+          <div id="home-auth-user" class="home-auth__card home-auth__card--success" hidden>
+            <h3 class="home-auth__heading" data-i18n="home.logged.title">مرحبًا بعودتك</h3>
+            <p class="home-auth__welcome"><span data-i18n="home.logged.prefix">تم تسجيل الدخول كـ</span> <strong id="user-display-name"></strong></p>
+            <p class="home-auth__email muted" id="user-email-display" dir="ltr"></p>
+            <div class="home-auth__actions">
+              <button type="button" class="btn btn--gold" data-nav="rooms" data-i18n="home.logged.goRooms">اذهب لحجز الغرفة</button>
+              <button type="button" class="btn btn--outline" id="logout-btn" data-i18n="home.logged.logout">تسجيل الخروج</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- معاينة الغرف: صورة + رقم + موقع -->
+        <div class="home-rooms-wrap reveal-item" style="--stagger:2">
+          <div class="home-rooms-head">
+            <h2 class="home-rooms-title" data-i18n="home.rooms.title">الغرف المتاحة للحجز — مع الرقم والموقع</h2>
+            <p class="home-rooms-desc" data-i18n="home.rooms.desc">كل بطاقة تعرض صورة الغرفة، رقمها داخل الفندق، والطابق والمنطقة (جناح/برج/بنتهاوس).</p>
+          </div>
+          <div id="home-rooms-grid" class="home-rooms-grid" role="list"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ROOM MANAGEMENT — functional list (distinct from services cards) -->
+    <section id="rooms" class="spa-section" data-section="rooms" aria-labelledby="rooms-heading">
+      <div class="panel panel--rooms">
+        <header class="panel__head">
+          <div>
+            <h2 id="rooms-heading" class="panel__title" data-i18n="rooms.panel.title">المخزون والحجز</h2>
+            <p class="panel__sub" data-i18n="rooms.panel.sub">احجز الغرف المتاحة. الغرف المحجوزة تُقفل وتظهر كحالة مكتملة.</p>
+          </div>
+          <span class="chip chip--gold" data-i18n="rooms.chip">مباشر</span>
+        </header>
+
+        <!-- Injected by Tasks (Rooms) module -->
+        <ul id="room-list" class="room-list" role="list"></ul>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section id="reviews" class="spa-section" data-section="reviews" aria-labelledby="reviews-heading">
+      <div class="panel">
+        <header class="panel__head">
+          <div>
+            <h2 id="reviews-heading" class="panel__title" data-i18n="reviews.panel.title">آراء عملائنا</h2>
+            <p class="panel__sub" data-i18n="reviews.panel.sub">نعتز بثقة ضيوفنا وتجاربهم في فندقنا.</p>
+          </div>
+        </header>
+        <div class="home-intro panel-inner reveal-item">
+          <div class="home-intro__cols" style="gap: 1.5rem;">
+            <div style="background: var(--bg-card, #1a1a1a); padding: 24px; border-radius: 12px; border: 1px solid var(--border-color, #333);">
+              <h3 style="color: #D4AF37; margin-bottom: 8px;">أحمد محمد</h3>
+              <p style="margin-bottom: 12px; font-size: 1.2rem;">⭐⭐⭐⭐⭐</p>
+              <p data-i18n="reviews.text1" style="line-height: 1.6; opacity: 0.9;">تجربة استثنائية، خدمة الكونسيرج لا يعلى عليها. سأعود بالتأكيد في زيارتي القادمة.</p>
+            </div>
+            <div style="background: var(--bg-card, #1a1a1a); padding: 24px; border-radius: 12px; border: 1px solid var(--border-color, #333);">
+              <h3 style="color: #D4AF37; margin-bottom: 8px;">Sarah O.</h3>
+              <p style="margin-bottom: 12px; font-size: 1.2rem;">⭐⭐⭐⭐⭐</p>
+              <p data-i18n="reviews.text2" style="line-height: 1.6; opacity: 0.9;">The Royal Suite exceeded all expectations. Incredible attention to detail and impeccable service.</p>
+            </div>
+            <div style="background: var(--bg-card, #1a1a1a); padding: 24px; border-radius: 12px; border: 1px solid var(--border-color, #333);">
+              <h3 style="color: #D4AF37; margin-bottom: 8px;">خالد السالم</h3>
+              <p style="margin-bottom: 12px; font-size: 1.2rem;">⭐⭐⭐⭐⭐</p>
+              <p data-i18n="reviews.text3" style="line-height: 1.6; opacity: 0.9;">الطعام في المطعم الكبير كان من أفضل التجارب التي حظيت بها. شكراً لفريق العمل.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT US -->
+    <section id="about" class="spa-section" data-section="about" aria-labelledby="about-heading">
+      <div class="panel">
+        <header class="panel__head">
+          <div>
+            <h2 id="about-heading" class="panel__title" data-i18n="about.panel.title">من نحن</h2>
+            <p class="panel__sub" data-i18n="about.panel.sub">تعرف على قصة فندق رويال فاميلي ٢٠٢٦.</p>
+          </div>
+        </header>
+
+        <div class="home-intro panel-inner reveal-item">
+          <h2 class="home-intro__title" data-i18n="about.intro.title">إرث من الفخامة والضيافة</h2>
+          <div class="home-intro__cols">
+            <p data-i18n="about.intro.p1">
+              تأسس فندق رويال فاميلي ليكون الوجهة الأولى للباحثين عن الرقي والتميز. نقدم لضيوفنا تجربة ضيافة لا تُنسى تجمع بين الأصالة والمعاصرة والتصميم الفاخر.
+            </p>
+            <p data-i18n="about.intro.p2">
+              بفضل فريق عملنا المحترف ومرافقنا ذات الخمس نجوم، نضمن تلبية كافة احتياجاتك وتجاوز توقعاتك، سواء كنت في رحلة عمل أو عطلة استجمام، لأن راحتك هي أولويتنا.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Booking confirmation modal -->
+  <div id="booking-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__dialog">
+      <button type="button" class="modal__close" data-close-modal aria-label="" data-i18n-aria="modal.closeAria">&times;</button>
+      <h2 id="modal-title" class="modal__title" data-i18n="modal.titleDefault">تأكيد</h2>
+      <p id="modal-body" class="modal__text"></p>
+      <button type="button" class="btn btn--gold" data-close-modal data-i18n="modal.continue">متابعة</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+  <!-- Luxury Footer -->
+  <footer class="luxury-footer">
+    <div class="luxury-footer__top">
+      <div class="luxury-footer__brand">
+        <div class="luxury-footer__emblem">◆</div>
+        <div class="luxury-footer__name">Royal Family<br><span>2026 GRAND HOTEL</span></div>
+      </div>
+      <div class="luxury-footer__cols">
+        <div class="luxury-footer__col">
+          <h4>الإقامة</h4>
+          <ul>
+            <li>الغرف والأجنحة</li>
+            <li>البنتهاوس الملكي</li>
+            <li>الجناح الرئاسي</li>
+          </ul>
+        </div>
+        <div class="luxury-footer__col">
+          <h4>الخدمات</h4>
+          <ul>
+            <li>سبا رويال</li>
+            <li>المطاعم الفاخرة</li>
+            <li>قاعة المؤتمرات</li>
+          </ul>
+        </div>
+        <div class="luxury-footer__col">
+          <h4>تواصل معنا</h4>
+          <ul>
+            <li>+20 111 234 5678</li>
+            <li>concierge@royalfamily.com</li>
+            <li>القاهرة، مصر</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="luxury-footer__social" aria-label="" data-i18n-aria="footer.socialAria">
+      <a class="luxury-footer__social-link luxury-footer__social-link--wa" href="https://wa.me/201112345678" target="_blank" rel="noopener noreferrer" data-i18n="footer.whatsapp">واتساب</a>
+      <a class="luxury-footer__social-link luxury-footer__social-link--ig" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" data-i18n="footer.instagram">إنستغرام</a>
+      <a class="luxury-footer__social-link luxury-footer__social-link--fb" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" data-i18n="footer.facebook">فيسبوك</a>
+    </div>
+    <div class="luxury-footer__bottom" style="display: flex; flex-direction: column; align-items: center; gap: 10px; padding-bottom: 20px;">
+      <div style="display: flex; justify-content: space-between; width: 100%; flex-wrap: wrap; gap: 10px;">
+        <span>© 2026 Royal Family Grand Hotel. جميع الحقوق محفوظة.</span>
+        <span class="luxury-footer__award">⭐⭐⭐⭐⭐ Forbes Five Star</span>
+      </div>
+      <div style="margin-top: 15px; color: #D4AF37; font-weight: 600; font-size: 1.05em; text-align: center; border-top: 1px solid rgba(212, 175, 55, 0.3); padding-top: 15px; width: 100%;">
+        تصميم وتطوير وتسويق إلكتروني: الحسن أحمد محمود
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
